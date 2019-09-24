@@ -10,6 +10,9 @@ import org.junit.Test;
 
 public class CacheTest {
 
+	/*
+	 * Testing WeakHashMap using asynchronous Await tools
+	 */
 	@Test
 	public void weakReferenceAwaitFTest() {
 		final WeakHashMap<Integer, String> map = new WeakHashMap<Integer, String>();
@@ -26,6 +29,9 @@ public class CacheTest {
 		Awaitility.await().atMost(10, TimeUnit.SECONDS).until(map::isEmpty);
 	}
 
+	/*
+	 * Testing WeakHashMap using a synchronous thread sleep
+	 */
 	@Test
 	public void weakReferenceSleepTest() {
 		final WeakHashMap<Integer, String> map = new WeakHashMap<Integer, String>();
